@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+<div class="container py-3">
+    <main>
+        <h2 class="display-6 text-center mb-4">LISTADO CONTAINERS</h2>
+        <app-tabla-container
+          (PasamosUnContainer)="tomarContainerActivo($event)"
+        ></app-tabla-container>
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">ALTA CONTAINER</h4>
+          </div>
+          <div class="card-body">
+            <app-alta-container
+              (PasamosUnContainer)="tomarContainerEnviado($event)"
+            ></app-alta-container>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">MODIFICACIÓN CONTAINER</h4>
+          </div>
+          <app-modificacion-container
+            [containerAModificar]="containerRecibido"
+          ></app-modificacion-container>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">ELIMINAR CONTAINER</h4>
+          </div>
+          <app-baja-container
+              [containerAEliminar]="containerRecibido"
+            ></app-baja-container>
+        </div>
+      </div>
+    </div>
+
+  </main>
+</div>

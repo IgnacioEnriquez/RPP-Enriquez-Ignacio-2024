@@ -1,0 +1,15 @@
+@if(productoRecibido)
+{
+
+  <div style="overflow-y: scroll">
+    <p>CÓDIGO: {{ productoRecibido.codigo }}</p>
+    <p>DESCRIPCIÓN: {{ productoRecibido.descripcion }}</p>
+    <p>PRECIO: {{ productoRecibido.precio }}</p>
+    <p>STOCK: {{ productoRecibido.stock }}</p>
+    @if(productoRecibido.paisOrigen.name)
+    {
+      <p>PAIS: {{ productoRecibido.paisOrigen.name.common }}</p>
+    }
+  </div>
+}
+  

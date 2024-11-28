@@ -1,0 +1,20 @@
+@if(paisRecibido.name)
+{
+
+  <p>Pais: {{ paisRecibido.name.common }}</p>
+  <p>Capital: {{ paisRecibido.capital }}</p>
+<p>Región: {{ paisRecibido.region }}</p>
+<p>Población: {{ paisRecibido.population }}</p>
+<img
+style="
+    width: 100px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    "
+  src="{{ paisRecibido.flags.png }}"
+  alt=""
+  />
+}

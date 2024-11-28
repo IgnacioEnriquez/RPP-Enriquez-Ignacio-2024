@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+<div class="text-center body">
+
+
+    <div class="contenedor-spinner" *ngIf="spinner">
+      <div style="margin-top: 200px;" class="spinner-list spinner-border text-warning" role="status">
+          <span class="visually-hidden">Loading...</span>
+      </div>
+  </div> 
+  
+    <div *ngIf="!spinner" class="form-signin w-100 m-auto">  
+     
+      <h1 class="h3 fw-normal">Iniciar Sesion </h1>
+  
+      <p style="font-size: 20px;">
+        Complete los campos para iniciar sesión o ingrese como
+        <button (click)="loadFields(1)" class="w-40 btn btn-lg btn-warning" style="font-size: 1.3rem;">Empleado</button>
+        ó
+        <button (click)="loadFields(2)" class="w-40 btn btn-lg btn-warning">Administrador</button>
+      </p>
+  
+      <div class="form-floating">
+        <input  [(ngModel)]="userForm.email" type="email" class="form-control" placeholder="name@example.com">
+        <label for="floatingInput">Direccion de Email</label>
+      </div>
+      <div class="form-floating">
+        <input  [(ngModel)]="userForm.password" type="password" class="form-control" placeholder="Contrasenia">
+        <label for="floatingPassword">Contraseña</label>
+      </div>    
+      <button (click)="login($event)" class="w-100 btn btn-lg btn-warning">Iniciar Sesion</button> 
+  
+    </div>
+  </div>

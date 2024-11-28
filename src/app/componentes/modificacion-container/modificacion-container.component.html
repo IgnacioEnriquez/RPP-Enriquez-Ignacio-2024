@@ -1,0 +1,74 @@
+
+
+<form [formGroup]="forma" (ngSubmit)="agregarContainer()">
+    <h4 class="mb-3 text-primary">DATOS PRODUCTO</h4>
+    <div class="row g-3">
+      <!-- CONTROL CODIGO -->
+      <div>
+        <label for="codigo" class="form-label">Código</label>
+        <input
+          type="number"
+          formControlName="codigo"
+          class="form-control"
+          formControlName="codigo"
+          required
+        />       
+        @if(forma.controls['codigo'].errors !== null &&
+        forma.controls["codigo"].touched) {
+        @if(forma.controls["codigo"].errors!["required"]) {
+        <p class="text-danger altura-error">El campo es requerido</p>
+        } @if(forma.controls["codigo"].errors!["min"]){
+        <small
+          style="color: red; font-weight: bolder; text-shadow: 1px 1px 1px #000"
+        >
+          El campo es demasiado corto (minimo 3 digitos)
+        </small>
+        } }
+      </div>   
+     
+      <!-- CONTROL EMPRESA -->
+      <div>
+        <label for="empresa" class="form-label">Empresa</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="empresa"
+          required
+        />
+        @if(forma.controls['empresa'].errors !== null &&
+        forma.controls["empresa"].touched) {
+        @if(forma.controls["empresa"].errors!["required"]) {
+        <p class="text-danger altura-error">El campo es requerido</p>
+        }} 
+      </div>
+      <!-- CONTROL CAPACIDAD -->
+      <div>
+        <label for="capacidad" class="form-label">Precio</label>
+        <input
+          type="number"
+          formControlName="capacidad"
+          class="form-control"
+          formControlName="capacidad"
+          required
+        />
+        @if(forma.controls['capacidad'].errors !== null &&
+        forma.controls["capacidad"].touched) {
+        @if(forma.controls["capacidad"].errors!["required"]) {
+        <p class="text-danger altura-error">El campo es requerido</p>
+        } @if(forma.controls["capacidad"].errors!["min"]){
+        <small
+          style="color: red; font-weight: bolder; text-shadow: 1px 1px 1px #000"
+        >
+          El campo tiene que ser mayor a 0
+        </small>
+        } }
+      </div>
+    </div>
+  
+    <hr class="my-4" />
+  
+    <button class="w-100 btn btn-primary btn-lg" type="submit">
+      Registrar Container
+    </button>
+  </form>
+  

@@ -1,0 +1,17 @@
+<div class="contenedor">
+    <div
+      class="row pais"
+      *ngFor="let pais of listadoReducido"
+      (click)="pasarPais(pais)"
+    >
+      <div class="col">{{ pais.name.common }}</div>
+      <div class="col">
+        <img
+          style="width: 40px; height: 40px; border-radius: 50%"
+          src="{{ pais.flags.png }}"
+          alt="bandera"
+        />
+      </div>
+    </div>
+  </div>
+  

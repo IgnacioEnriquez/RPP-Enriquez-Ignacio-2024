@@ -1,0 +1,48 @@
+
+<h1></h1>
+
+    <h4 class="mb-3 text-primary">DATOS PRODUCTO</h4>
+    <div class="row g-3">
+      <!-- CONTROL CODIGO -->
+      <div>
+        <label for="codigo" class="form-label">Código</label>
+        <input
+          type="number"      
+          class="form-control"      
+          disabled
+          placeholder=" {{containerAEliminar.codigo}}"
+          />                
+      </div>   
+     
+      <!-- CONTROL EMPRESA -->
+      <div>
+        <label for="empresa" class="form-label">Empresa</label>
+        <input
+          type="text"
+          class="form-control"
+          formControlName="empresa"
+          disabled
+          placeholder=" {{containerAEliminar.empresa}}"
+        />       
+      </div>
+      <!-- CONTROL CAPACIDAD -->
+      <div>
+        <label for="capacidad" class="form-label">Capacidad</label>
+        <input
+          type="text"
+          formControlName="capacidad"
+          class="form-control"
+          formControlName="capacidad"
+          disabled
+          placeholder=" {{containerAEliminar.capacidad}}"
+        />                
+      </div>
+    </div>
+  
+    <hr class="my-4" />
+  
+    <button class="w-100 btn btn-primary btn-lg" type="submit" (click)="eliminarContainer()">
+      ELIMINAR Container
+    </button>
+
+  
