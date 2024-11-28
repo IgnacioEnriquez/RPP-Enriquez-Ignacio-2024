@@ -1,0 +1,63 @@
+<form [formGroup]="forma" (ngSubmit)="agregarPedido()">
+  <h4 class="mb-3 text-primary">DATOS PEDIDO</h4>
+  <div class="row g-3">
+    <!-- CONTROL CODIGO CONTAINER -->
+    <div class="col-md-3">
+      <label for="codigoContainer" class="form-label"
+        >Código de Container</label
+      >
+      <input
+        type="number"
+        formControlName="codigoContainer"
+        class="form-control"
+        formControlName="codigoContainer"
+        required
+      />
+      @if(forma.controls['codigoContainer'].errors !== null &&
+      forma.controls["codigoContainer"].touched) {
+      @if(forma.controls["codigoContainer"].errors!["required"]) {
+      <p class="text-danger altura-error">El campo es requerido</p>
+      } }
+    </div>
+    <!-- CONTROL CODIGO Producto -->
+    <div class="col-md-3">
+        <label for="codigoProducto" class="form-label"
+          >Código de Producto</label
+        >
+        <input
+          type="number"
+          formControlName="codigoProducto"
+          class="form-control"
+          formControlName="codigoProducto"
+          required
+        />
+        @if(forma.controls['codigoProducto'].errors !== null &&
+        forma.controls["codigoProducto"].touched) {
+        @if(forma.controls["codigoProducto"].errors!["required"]) {
+        <p class="text-danger altura-error">El campo es requerido</p>
+        } }
+      </div>    
+    <!-- CONTROL CANTIDAD -->
+    <div class="col-md-3">
+      <label for="cantidadProducto" class="form-label">cantidadProducto</label>
+      <input
+        type="number"
+        formControlName="cantidadProducto"
+        class="form-control"
+        formControlName="cantidadProducto"
+        required
+      />
+      @if(forma.controls['cantidadProducto'].errors !== null &&
+      forma.controls["cantidadProducto"].touched) {
+      @if(forma.controls["cantidadProducto"].errors!["required"]) {
+      <p class="text-danger altura-error">El campo es requerido</p>
+      } }
+    </div>         
+  </div>
+
+  <hr class="my-4" />
+
+  <button class="w-100 btn btn-primary btn-lg" type="submit">
+    Registrar Pedido
+  </button>
+</form>

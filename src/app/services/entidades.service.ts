@@ -125,4 +125,32 @@ export class EntidadesService {
 
 
   }
+
+  async agregarPedido(pedido: any) {
+    const prod = {
+     codigoContainer : pedido.codigoContainer,
+     codigoProducto : pedido.codigoProducto,
+     cantidadProducto : pedido.cantidadProducto
+    };  
+
+    const pedidos = doc(collection(this._firestore, 'pedidos'));
+
+    await setDoc(pedidos, prod);
+  }
+
+  async traerPedidos() {
+    let pedidosList: any = [];
+
+    const containers = collection(this._firestore, 'pedidos');
+
+    const q = query(containers);
+
+    const querySnapshot = await getDocs(q);
+
+    querySnapshot.forEach((doc: any) => {
+      pedidosList.push(doc.data());
+    });
+
+    return pedidosList;
+  }
 }

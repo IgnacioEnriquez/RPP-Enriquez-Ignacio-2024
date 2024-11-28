@@ -26,6 +26,9 @@
           <li class="nav-item">
             <a class="nav-link" routerLink="/container" *ngIf="this.user$ && this.isAdmin">Container</a>
           </li> 
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/pedidos" *ngIf="this.user$ && this.isAdmin">Pedidos</a>
+          </li> 
         </ul>
         <a class="btn btn-outline-warning" routerLink="login" *ngIf="!this.user$">LOGIN</a>
         <a
